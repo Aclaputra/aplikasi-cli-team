@@ -86,14 +86,21 @@ public class Solusi implements SolusiInterface {
         // Input jumlah bambu dan panjang ruasnya
         System.out.print("Initials (separate with commas): ");
         String[] ruasInput = scanner.nextLine().split(",");
-        int[] ruasBambu = new int[ruasInput.length];
-        for (int i = 0; i < ruasInput.length; i++) {
-            ruasBambu[i] = Integer.parseInt(ruasInput[i]);
-        }
 
         // Input jumlah siklus pemotongan
         System.out.print("Number of cutting cycles: ");
         int jumlahSiklus = scanner.nextInt();
+
+        // Konversi array string dari input menjadi int dan print bambu input
+        int[] ruasBambu = new int[ruasInput.length];
+        System.out.println("Initials: ");
+        for (int i = 0; i < ruasInput.length; i++) {
+            ruasBambu[i] = Integer.parseInt(ruasInput[i]);
+            System.out.print("\n|");
+            for (int j = 0; j < ruasBambu[i]; j++) {
+                System.out.print("-");
+            }
+        }
 
         // Simulasi pemotongan ruas bambu
         for (int siklus = 1; siklus <= jumlahSiklus; siklus++) {
@@ -102,10 +109,13 @@ public class Solusi implements SolusiInterface {
             }
             System.out.print("\nCycle Cuts " + siklus + ":\n");
             for (int i = 0; i < ruasBambu.length; i++) {
-                System.out.print(ruasBambu[i] + " ");
+//                System.out.print(ruasBambu[i] + " ");
+                System.out.print("\n|");
+                for (int j = 0; j < ruasBambu[i]; j++) {
+                    System.out.print("-");
+                }
             }
         }
-
         System.out.println();
     }
 
