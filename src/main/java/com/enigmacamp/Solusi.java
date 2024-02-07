@@ -1,5 +1,7 @@
 package com.enigmacamp;
 
+import java.util.Scanner;
+
 interface SolusiInterface {
     void NilaiTerbesarDanTerkecil();
     void MencariNilaiMinusTerbesarYangHilang();
@@ -24,6 +26,9 @@ public class Solusi implements SolusiInterface{
 
     @Override
     public void MencariNamaGanjil() {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
 
+        input.split("//+g");
     }
 }
