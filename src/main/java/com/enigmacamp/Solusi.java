@@ -1,5 +1,6 @@
 package com.enigmacamp;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -13,17 +14,22 @@ interface SolusiInterface {
 public class Solusi implements SolusiInterface {
     @Override
     public void NilaiTerbesarDanTerkecil() {
-        int[] numbers = {6, 2, 4, 10, 5};
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+        String[] strNum = sc.nextLine().split("[,]",0);
+        for (String str : strNum) {
+            numbers.add(Integer.parseInt(str));
+        }
 
-        int max = numbers[0];
-        int min = numbers[0];
+        int max = numbers.get(0);
+        int min = numbers.get(0);
 
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] > max) {
-                max = numbers[i];
+        for (int i = 1; i < numbers.size(); i++) {
+            if (numbers.get(i) > max) {
+                max = numbers.get(i);
             }
-            if (numbers[i] < min) {
-                min = numbers[i];
+            if (numbers.get(i)< min) {
+                min = numbers.get(i);
             }
         }
 
@@ -32,35 +38,41 @@ public class Solusi implements SolusiInterface {
 
     @Override
     public void MencariNilaiMinusTerbesarYangHilang() {
-        System.out.println(findMin(new Integer[]{0, 2, 4, -1, -3, -4}));
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+        String[] strNum = sc.nextLine().split("[,]",0);
+        for (String str : strNum) {
+            numbers.add(Integer.parseInt(str));
+        }
+        System.out.println(findMin(numbers));
     }
 
-    public static Integer findMin(Integer[] numbers) {
+    public static Integer findMin(ArrayList<Integer> numbers) {
         int missing = 0;
 
-        for (int i = 0; i < numbers.length - 1; i++) {
-            for (int j = i + 1; j < numbers.length; j++) {
-                if (numbers[i] > numbers[j]) {
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            for (int j = i + 1; j < numbers.size(); j++) {
+                if (numbers.get(i) > numbers.get(j)) {
                     // Tukar elemen jika tidak dalam urutan yang benar
-                    int temp = numbers[i];
-                    numbers[i] = numbers[j];
-                    numbers[j] = temp;
+                    int temp = numbers.get(i);
+                    numbers.set(i, numbers.get(j));
+                    numbers.set(j, temp);
                 }
             }
         }
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < 0) {
-                if (i == 0 && numbers[i] != -1) {
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) < 0) {
+                if (i == 0 && numbers.get(i) != -1) {
                     missing = -2;
-                } else if (i > 0 && numbers[i] - numbers[i - 1] > 1) {
-                    missing = numbers[i - 1] + 1;
+                } else if (i > 0 && numbers.get(i) - numbers.get(i - 1) > 1) {
+                    missing = numbers.get(i - 1) + 1;
                 }
             }
         }
 
-        if (missing == 0 && numbers[numbers.length - 1] < 0) {
-            missing = numbers[numbers.length - 1] + 1;
+        if (missing == 0 && numbers.get(numbers.size() - 1) < 0) {
+            missing = numbers.get(numbers.size() - 1) + 1;
         }
 
         return missing;
