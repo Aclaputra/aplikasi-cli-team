@@ -134,7 +134,6 @@ public class Solusi implements SolusiInterface {
                 if (i != splittedInput.length -2)
                     output += ",";
             }
-
         }
 
         System.out.println(output);
