@@ -3,6 +3,11 @@
 Link Github Project : https://github.com/aclaputra/aplikasi-cli-team/
 Link Gitlab Project : upload di Vica live-cocde challenge team project.
 
+# Our Team
+- Muhammad Acla
+- Lely https://github.com/lelyr1305
+- Gagas https://github.com/GagasWahyu27
+
 ## Problem
 - Soal 1: Menentukan Nilai Terbesar dan Terkecil
 
