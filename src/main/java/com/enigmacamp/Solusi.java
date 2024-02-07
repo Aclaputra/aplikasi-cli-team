@@ -1,5 +1,6 @@
 package com.enigmacamp;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 interface SolusiInterface {
@@ -27,8 +28,19 @@ public class Solusi implements SolusiInterface{
     @Override
     public void MencariNamaGanjil() {
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+        String[] splittedInput = sc.nextLine().split("\\s+");
 
-        input.split("//+g");
+        String output = "";
+        for (int i=0; i<splittedInput.length; i++) {
+            String nama = splittedInput[i];
+            if (nama.length() % 2 == 1) {
+                output += nama;
+                if (i != splittedInput.length -2)
+                    output += ",";
+            }
+
+        }
+
+        System.out.println(output);
     }
 }
