@@ -96,10 +96,11 @@ public class Solusi implements SolusiInterface {
         System.out.println("Initials: ");
         for (int i = 0; i < ruasInput.length; i++) {
             ruasBambu[i] = Integer.parseInt(ruasInput[i]);
-            System.out.print("\n|");
+            System.out.print("|");
             for (int j = 0; j < ruasBambu[i]; j++) {
                 System.out.print("-");
             }
+            System.out.println();
         }
 
         // Simulasi pemotongan ruas bambu
@@ -110,10 +111,11 @@ public class Solusi implements SolusiInterface {
             System.out.print("\nCycle Cuts " + siklus + ":\n");
             for (int i = 0; i < ruasBambu.length; i++) {
 //                System.out.print(ruasBambu[i] + " ");
-                System.out.print("\n|");
+                System.out.print("|");
                 for (int j = 0; j < ruasBambu[i]; j++) {
                     System.out.print("-");
                 }
+                System.out.println();
             }
         }
         System.out.println();
