@@ -1,7 +1,6 @@
 # aplikasi-cli
 
 Link Github Project : https://github.com/aclaputra/aplikasi-cli-team/
-Link Gitlab Project : upload di Vica live-cocde challenge team project.
 
 # Our Team
 - Muhammad Acla
