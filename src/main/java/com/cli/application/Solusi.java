@@ -1,4 +1,4 @@
-package com.enigmacamp;
+package com.cli.application;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -130,6 +130,7 @@ public class Solusi implements SolusiInterface {
             String nama = splittedInput[i];
             if (nama.length() % 2 == 1) {
                 output += nama;
+                // bisa pakai substring
                 if (i != splittedInput.length -2)
                     output += ",";
             }
